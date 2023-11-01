@@ -1,0 +1,24 @@
+def sousTableau(tab, a, b):
+    # Contrôle l'ordre des indices
+    if a > b:
+        a, b = b, a
+    return tab[a:b]
+
+continuer = 'o'
+while continuer == 'o':
+    # Demande la saisie d'un tableau à 10 éléments
+    tab = []
+    for i in range(10):
+        tab.append(int(input("Entrez l'élément numéro {} : ".format(i+1))))
+
+    # Demande les indices
+    a = int(input("Entrez le premier indice : "))
+    b = int(input("Entrez le deuxième indice : "))
+
+    # Appelle la fonction et affiche le résultat
+    resultat = sousTableau(tab, a, b)
+    print("Le sous-tableau est : ", resultat)
+
+    # Demande à l'utilisateur s'il souhaite saisir une nouvelle liste
+    continuer = input("Voulez-vous saisir une nouvelle liste ? (o/n) ").lower() 
+     
